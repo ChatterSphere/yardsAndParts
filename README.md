@@ -32,7 +32,7 @@ To spin up this example locally, follow these steps:
 1. `cd yardsAndParts && cp .env.example .env` to copy the example environment variables
 1. `npm install` to install dependencies
 1.  if you dont want to set up local database then use live database I have created by changing one line in .env file as below:
-      # Database connection string
+      ##### Database connection string
       DATABASE_URI=postgres://default:znIL5jt2AmFv@ep-solitary-silence-a4g89mtu.us-east-1.aws.neon.tech:5432/verceldb?sslmode=require
 1. start the dev server by 'npm run dev' 
 1. `open http://localhost:3000` to open the app in your browser
