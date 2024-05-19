@@ -1,11 +1,5 @@
 # Payload E-Commerce Template
 
-## test
-
-### This is a change for testing purposes
-
-## test end
-
 This is the official [Payload E-Commerce Template](https://github.com/payloadcms/payload/blob/main/templates/ecommerce). Use it to power e-commerce businesses and online stores of all sizes. This repo includes a fully-working backend, enterprise-grade admin panel, and a beautifully designed, production-ready website.
 
 This template is right for you if you are selling:
@@ -16,15 +10,33 @@ This template is right for you if you are selling:
 
 Core features:
 
-- [Pre-configured Payload Config](#how-it-works)
-- [Authentication](#users-authentication)
-- [Access Control](#access-control)
-- [Shopping Cart](#shopping-cart)
-- [Checkout](#checkout)
-- [Paywall](#paywall)
-- [Layout Builder](#layout-builder)
-- [SEO](#seo)
-- [Website](#website)
+- [Payload E-Commerce Template](#payload-e-commerce-template)
+  - [Quick Start](#quick-start)
+    - [Clone](#clone)
+    - [Development](#development)
+  - [How it works](#how-it-works)
+    - [Collections](#collections)
+    - [Globals](#globals)
+  - [Access control](#access-control)
+  - [Shopping cart](#shopping-cart)
+  - [Stripe](#stripe)
+    - [Connect Stripe](#connect-stripe)
+  - [Checkout](#checkout)
+  - [Paywall](#paywall)
+  - [Layout Builder](#layout-builder)
+  - [Draft Preview](#draft-preview)
+  - [SEO](#seo)
+  - [Redirects](#redirects)
+  - [Website](#website)
+    - [Cache](#cache)
+    - [Eject](#eject)
+  - [Development](#development-1)
+    - [Docker](#docker)
+    - [Seed](#seed)
+    - [Conflicting routes](#conflicting-routes)
+  - [Production](#production)
+    - [Deployment](#deployment)
+  - [Questions](#questions)
 
 ## Quick Start
 
