@@ -28,7 +28,7 @@ export const CustomHeroCatalog: React.FC<Page['hero']> = ({ richText, media, lin
    typeof media !== 'string' && `${process.env.NEXT_PUBLIC_SERVER_URL}/media/${media.filename}`
   return (
     <section className={classes.hero}>
-      <div className={classes.heroWrapper} style={{ backgroundImage: `url(${mediaUrl})`}}>
+      <div className={classes.heroWrapper} style={{  backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(${mediaUrl})`,  backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat'}}>
 
         <div className={classes.heroTextBox}>
           <RichText content={richText} />

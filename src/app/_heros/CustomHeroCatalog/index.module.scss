@@ -4,6 +4,9 @@
   padding-top: calc(var(--base) * 2);
   position: relative;
   overflow: hidden;
+  box-sizing: border-box;
+  text-align: center;
+  color: var(--color-base-0);
 
   @include mid-break {
     padding-top: var(--gutter-h);
@@ -58,7 +61,9 @@
 
 /* Container for the form */
 .formContainer {
-  background-color: #f3f3f3; /* Light grey background */
+  text-align: left;
+  background-color: transparent;
+  // background-color: #f3f3f3; /* Light grey background */
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -80,7 +85,7 @@
 }
 
 /* Style for the search button */
-.searcButton {
+.searchButton {
   width: 100%;
   padding: 10px;
   background-color: #007BFF; /* Bootstrap blue */
