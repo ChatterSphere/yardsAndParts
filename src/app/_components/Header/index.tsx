@@ -1,48 +1,100 @@
-{
-  /* eslint-disable @next/next/no-img-element */
+@use '../../_css/queries.scss' as *;
+
+.header {
+  position: sticky;
+  top: 0;
+  background-color: #034C8B;
+  padding: 8px 0; // Minimal padding for a compact look
+  color: white;
 }
 
-import React from 'react'
-import Link from 'next/link'
+.wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px; // Padding from the edges of the screen
+}
 
-import { Header } from '../../../payload/payload-types'
-import { fetchHeader } from '../../_api/fetchGlobals'
-import { Gutter } from '../Gutter'
-import { HeaderNav } from './Nav'
+.logo {
+  width: 200px;
+  margin-right: 20px; // Space between logo and search bar
+}
 
-import classes from './index.module.scss'
+.searchBar {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  flex-grow: 1; // Allows searchBar to expand
+  max-width: 650px; // Increases the maximum width
+}
 
-export async function Header() {
-  let header: Header | null = null
+.categorySelect {
+  width: 150px; // Fixed width for the select category button
+  height: 40px;
+  padding: 0 15px;
+  border: none;
+  background-color: transparent;
+  color: #333;
+  font-size: 16px;
+}
 
-  try {
-    header = await fetchHeader()
-  } catch (error) {
-    // When deploying this template on Payload Cloud, this page needs to build before the APIs are live
-    // So swallow the error here and simply render the header without nav items if one occurs
-    // in production you may want to redirect to a 404  page or at least log the error somewhere
-    // console.error(error)
+.searchInput {
+  flex-grow: 1; // Allows for equal growth within the search bar
+  height: 40px;
+  padding: 0 15px;
+  border: none;
+  background-color: transparent;
+  color: #333;
+  font-size: 16px;
+  border-radius: 51px;
+}
+
+
+
+.nav {
+  display: flex;
+  gap: 20px; // Adjusted for more consistent spacing
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0 10px; // Added padding for better edge alignment
+
+  > * {
+    text-decoration: none;
+    color: white; // Ensures all elements inside nav are white
   }
 
-  return (
-    <>
-      <header className={classes.header}>
-        <Gutter className={classes.wrap}>
-          <Link href="/">
-            {/* Cannot use the `<picture>` element here with `srcSet`
-              This is because the theme is able to be overridden by the user
-              And so `@media (prefers-color-scheme: dark)` will not work
-              Instead, we just use CSS to invert the color via `filter: invert(1)` based on `[data-theme="dark"]`
-            */}
-            <img
-              className={classes.logo}
-              alt="Payload Logo"
-              src="https://raw.githubusercontent.com/payloadcms/payload/main/packages/payload/src/admin/assets/images/payload-logo-light.svg"
-            />
-          </Link>
-          <HeaderNav header={header} />
-        </Gutter>
-      </header>
-    </>
-  )
+  .icon {
+    width: 24px; // Standard size for icons
+    height: 24px; // Maintain aspect ratio
+    vertical-align: middle;
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    border-radius: 5px; // Optional for rounded touch
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.2); // Hover effect for better interaction
+    }
+  }
+
+  /* Style for the "Login" and "Create Account" links if they include text */
+  a.login-link,
+  a.create-account-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 12px; // Sufficient padding for clickable area
+  }
+}
+
+.hide {
+  opacity: 0;
+  transition: opacity 100ms linear;
+  visibility: hidden;
 }

@@ -1,20 +1,49 @@
-@use '../../../_css/queries.scss' as *;
-
 .nav {
   display: flex;
-  gap: calc(var(--base) / 4) var(--base);
+  gap: 20px;  // Adjusted for more consistent spacing
   align-items: center;
   flex-wrap: wrap;
   opacity: 1;
   transition: opacity 100ms linear;
   visibility: visible;
+  padding: 0 10px;  // Added padding for better edge alignment
 
   > * {
     text-decoration: none;
+    color: white;  // Ensures all elements inside nav are white
+  }
+
+  /* Specific icon adjustments */
+  .icon {
+    width: 24px;  // Standard size for icons
+    height: 24px;  // Maintain aspect ratio
+    vertical-align: middle;
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    border-radius: 5px;  // Optional for rounded touch
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.2);  // Hover effect for better interaction
+    }
+  }
+
+  /* Style for the "Login" and "Create Account" links if they include text */
+  a.login-link,
+  a.create-account-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 12px;  // Sufficient padding for clickable area
   }
 }
 
 .hide {
   opacity: 0;
+  transition: opacity 100ms linear;
   visibility: hidden;
 }
