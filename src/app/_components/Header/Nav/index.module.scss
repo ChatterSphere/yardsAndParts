@@ -1,12 +1,219 @@
+// @use '../../../_css/queries.scss' as *;
+
+// .nav {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   width: 100%;
+//   padding: 10px;
+//   background-color: #fff; // adjust as needed
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   z-index: 1000;
+// }
+
+// .left, .center, .right {
+//   display: flex;
+//   align-items: center;
+// }
+
+// .center {
+//   flex: 1;
+//   justify-content: center;
+// }
+
+// .right {
+//   display: flex;
+//   align-items: center;
+// }
+
+// .categoriesButton, .garageButton {
+//   background-color: #ffa500; // Or any color that matches your design
+//   border: none;
+//   padding: 10px;
+//   border-radius: 5px;
+//   cursor: pointer;
+//   display: flex;
+//   align-items: center;
+//   margin: 0 10px;
+// }
+
+// .navLink {
+//   margin: 0 10px;
+//   text-decoration: none;
+//   color: black; // Adjust as needed
+//   font-size: 1rem;
+// }
+
+// .newBadge::after {
+//   content: 'New!';
+//   color: white;
+//   background-color: green;
+//   padding: 2px 5px;
+//   border-radius: 5px;
+//   margin-left: 5px;
+//   font-size: 0.8em;
+// }
+
+// .hide {
+//   display: none;
+// }
+
+// .icon {
+//   margin-right: 5px;
+// }
+
+// @media (max-width: 768px) {
+//   .nav {
+//     flex-direction: column;
+//     padding: 20px;
+//   }
+
+//   .center {
+//     flex-direction: column;
+//   }
+
+//   .navLink {
+//     margin: 10px 0;
+//   }
+
+//   .left, .right {
+//     justify-content: center;
+//     margin: 10px 0;
+//   }
+// }
+
+
+
+// .nav {
+//   display: flex;
+//   gap: calc(var(--base) / 4) var(--base);
+//   align-items: center;
+//   flex-wrap: wrap;
+//   opacity: 1;
+//   transition: opacity 100ms linear;
+//   visibility: visible;
+
+//   > * {
+//     text-decoration: none;
+//   }
+// }
+
+// .hide {
+//   opacity: 0;
+//   visibility: hidden;
+// }
+
+
+// src/app/_components/Header/Nav/index.module.scss
+
+// @use '../../../_css/queries.scss' as *;
+
+// .nav {
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+//   width: 100%;
+//   padding: 10px 20px;
+//   background-color: #fff;
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   z-index: 1000;
+// }
+
+// .left, .center, .right {
+//   display: flex;
+//   align-items: center;
+// }
+
+// .center {
+//   flex: 1;
+//   justify-content: center;
+// }
+
+// .categoriesButton, .garageButton {
+//   background-color: #ffa500;
+//   border: none;
+//   padding: 10px;
+//   border-radius: 5px;
+//   cursor: pointer;
+//   display: flex;
+//   align-items: center;
+//   margin: 0 10px;
+// }
+
+// .categoriesButton .icon, .garageButton .garageIcon {
+//   margin-right: 5px;
+// }
+
+// .navLink {
+//   margin: 0 10px;
+//   text-decoration: none;
+//   color: black;
+//   font-size: 1rem;
+//   position: relative;
+// }
+
+// .navLink:hover {
+//   color: #ff6600;
+// }
+
+// .navLink::after {
+//   content: '';
+//   display: block;
+//   width: 0;
+//   height: 2px;
+//   background: #ff6600;
+//   transition: width .3s;
+// }
+
+// .navLink:hover::after {
+//   width: 100%;
+// }
+
+// .newBadge {
+//   margin-left: 5px;
+//   background-color: green;
+//   color: white;
+//   padding: 2px 5px;
+//   border-radius: 5px;
+//   font-size: 0.8em;
+// }
+
+// .hide {
+//   display: none;
+// }
+
+// @media (max-width: 768px) {
+//   .nav {
+//     flex-direction: column;
+//     padding: 20px;
+//   }
+
+//   .center {
+//     flex-direction: column;
+//   }
+
+//   .navLink {
+//     margin: 10px 0;
+//   }
+
+//   .left, .right {
+//     justify-content: center;
+//     margin: 10px 0;
+//   }
+// }
 @use '../../../_css/queries.scss' as *;
 
 .nav {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 10px;
-  background-color: #fff; // adjust as needed
+  padding: 10px 20px;
+  background-color: #fff;
   position: fixed;
   top: 0;
   left: 0;
@@ -23,13 +230,8 @@
   justify-content: center;
 }
 
-.right {
-  display: flex;
-  align-items: center;
-}
-
 .categoriesButton, .garageButton {
-  background-color: #ffa500; // Or any color that matches your design
+  background-color: #ffa500;
   border: none;
   padding: 10px;
   border-radius: 5px;
@@ -39,29 +241,47 @@
   margin: 0 10px;
 }
 
+.categoriesButton .icon, .garageButton .garageIcon {
+  margin-right: 5px;
+}
+
 .navLink {
   margin: 0 10px;
   text-decoration: none;
-  color: black; // Adjust as needed
+  color: black;
   font-size: 1rem;
+  position: relative;
 }
 
-.newBadge::after {
-  content: 'New!';
-  color: white;
-  background-color: green;
-  padding: 2px 5px;
-  border-radius: 5px;
-  margin-left: 5px;
-  font-size: 0.8em;
+.navLink:hover {
+  color: #ff6600;
 }
+
+.navLink::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #ff6600;
+  transition: width .3s;
+}
+
+.navLink:hover::after {
+  width: 100%;
+}
+
+// .newBadge::after {
+//   content: ' New!';
+//   color: white;
+//   background-color: green;
+//   padding: 2px 5px;
+//   border-radius: 5px;
+//   margin-left: 5px;
+//   font-size: 0.8em;
+// }
 
 .hide {
   display: none;
-}
-
-.icon {
-  margin-right: 5px;
 }
 
 @media (max-width: 768px) {
@@ -85,22 +305,6 @@
 }
 
 
-
-// .nav {
-//   display: flex;
-//   gap: calc(var(--base) / 4) var(--base);
-//   align-items: center;
-//   flex-wrap: wrap;
-//   opacity: 1;
-//   transition: opacity 100ms linear;
-//   visibility: visible;
-
-//   > * {
-//     text-decoration: none;
-//   }
-// }
-
-// .hide {
-//   opacity: 0;
-//   visibility: hidden;
-// }
+.mainContent {
+  margin-top: 70px; /* Adjust this value based on the height of your navbar */
+}
