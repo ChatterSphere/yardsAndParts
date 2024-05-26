@@ -111,6 +111,7 @@ export default buildConfig({
       method: 'get',
       handler: productsProxy,
     },
+    //TODO: Delete this endpoint
     // The seed endpoint is used to populate the database with some example data
     // You should delete this endpoint before deploying your site to production
     {
