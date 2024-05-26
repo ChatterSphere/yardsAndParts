@@ -10,15 +10,33 @@ This template is right for you if you are selling:
 
 Core features:
 
-- [Pre-configured Payload Config](#how-it-works)
-- [Authentication](#users-authentication)
-- [Access Control](#access-control)
-- [Shopping Cart](#shopping-cart)
-- [Checkout](#checkout)
-- [Paywall](#paywall)
-- [Layout Builder](#layout-builder)
-- [SEO](#seo)
-- [Website](#website)
+- [Payload E-Commerce Template](#payload-e-commerce-template)
+  - [Quick Start](#quick-start)
+    - [Clone](#clone)
+    - [Development](#development)
+  - [How it works](#how-it-works)
+    - [Collections](#collections)
+    - [Globals](#globals)
+  - [Access control](#access-control)
+  - [Shopping cart](#shopping-cart)
+  - [Stripe](#stripe)
+    - [Connect Stripe](#connect-stripe)
+  - [Checkout](#checkout)
+  - [Paywall](#paywall)
+  - [Layout Builder](#layout-builder)
+  - [Draft Preview](#draft-preview)
+  - [SEO](#seo)
+  - [Redirects](#redirects)
+  - [Website](#website)
+    - [Cache](#cache)
+    - [Eject](#eject)
+  - [Development](#development-1)
+    - [Docker](#docker)
+    - [Seed](#seed)
+    - [Conflicting routes](#conflicting-routes)
+  - [Production](#production)
+    - [Deployment](#deployment)
+  - [Questions](#questions)
 
 ## Quick Start
 
@@ -34,7 +52,7 @@ To spin up this example locally, follow these steps:
 1.  if you dont want to set up local database then use live database I have created by changing one line in .env file as below:
       ##### Database connection string
       DATABASE_URI=postgres://default:znIL5jt2AmFv@ep-solitary-silence-a4g89mtu.us-east-1.aws.neon.tech:5432/verceldb?sslmode=require
-1. start the dev server by 'npm run dev' 
+1. start the dev server by 'npm run dev'
 1. `open http://localhost:3000` to open the app in your browser
 
 
@@ -294,7 +312,7 @@ To seed the database with a few products and pages you can run `yarn seed`. This
 
 >In a monorepo when routes are bootstrapped to the same host, they can conflict with Payload's own routes if they have the same name. In our template we've named the Nextjs API routes to `next` to avoid this conflict.
 >
->This can happen with any other routes conflicting with Payload such as `admin` and we recommend using different names for custom routes.  
+>This can happen with any other routes conflicting with Payload such as `admin` and we recommend using different names for custom routes.
 >Alternatively you can also rename Payload's own routes via the [configuration](https://payloadcms.com/docs/configuration/overview).
 
 ## Production
