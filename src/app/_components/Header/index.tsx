@@ -10,7 +10,7 @@ export async function Header() {
 
   try {
     header = await fetchHeader();
-    console.log(header); // This logs the header data to the console after fetching
+    console.log(header);  
   } catch (error) {
     console.error(error);
   }

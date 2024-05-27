@@ -1,4 +1,3 @@
-///Users/hassan/yardsAndParts/src/app/_components/Header/Nav/index.tsx
 'use client'
 
 import React from 'react'

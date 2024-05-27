@@ -1,4 +1,5 @@
-///Users/hassan/yardsAndParts/src/app/_components/Header/Nav/index.module.scss
+@use '../../../_css/queries.scss' as *;
+
 .nav {
   display: flex;
   justify-content: space-between;
