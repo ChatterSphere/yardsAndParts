@@ -18,10 +18,30 @@ export const CustomHeroCatalog: React.FC<Page['hero']> = ({ richText, media, lin
   const [model, setModel] = useState('');
   const [engine, setEngine] = useState('');
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     console.log({ year, make, model, engine });
+  
+    const makeApiCall = async () => {
+      try {
+        const response = await fetch('https://carapi.app/api/makes?year=2000', {
+          method: 'GET',
+          headers: {
+            'accept': 'application/json',
+            'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjYXJhcGkuYXBwIiwic3ViIjoiMWIxZWYzZjAtODdkMS00MTkyLWJkODEtZjQzNTgyZTUwMjE5IiwiYXVkIjoiMWIxZWYzZjAtODdkMS00MTkyLWJkODEtZjQzNTgyZTUwMjE5IiwiZXhwIjoxNzE3Mzg4NTcwLCJpYXQiOjE3MTY3ODM3NzAsImp0aSI6IjdkOWY1MTNkLWI5ZWUtNDZjOS1iMzRhLTY5ODg4ZjEyNGNlYyIsInVzZXIiOnsic3Vic2NyaWJlZCI6ZmFsc2UsInN1YnNjcmlwdGlvbiI6bnVsbCwicmF0ZV9saW1pdF90eXBlIjoiaGFyZCIsImFkZG9ucyI6eyJhbnRpcXVlX3ZlaGljbGVzIjpmYWxzZSwiZGF0YV9mZWVkIjpmYWxzZX19fQ.ITx8Ub1F0JDOzJrhBWeL2pffKDo_UEZGhouKIGApdcw'
+          }
+        });
+  
+        const data = await response.json();
+        console.log(data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+  
+    makeApiCall();
   };
+  
   
   const mediaUrl = 
    media &&
