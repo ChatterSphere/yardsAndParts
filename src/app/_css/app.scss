@@ -129,3 +129,101 @@ a {
 svg {
   vertical-align: middle;
 }
+
+/* Added styles for the navbar */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px 20px;
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.left, .center, .right {
+  display: flex;
+  align-items: center;
+}
+
+.center {
+  flex: 1;
+  justify-content: center;
+}
+
+.categoriesButton, .garageButton {
+  background-color: #ffa500;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  margin: 0 10px;
+}
+
+.categoriesButton .icon, .garageButton .garageIcon {
+  margin-right: 5px;
+}
+
+.navLink {
+  margin: 0 10px;
+  text-decoration: none;
+  color: black;
+  font-size: 1rem;
+  position: relative;
+}
+
+.navLink:hover {
+  color: #ff6600;
+}
+
+.navLink::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #ff6600;
+  transition: width .3s;
+}
+
+.navLink:hover::after {
+  width: 100%;
+}
+
+.newBadge::after {
+  content: ' New!';
+  color: white;
+  background-color: green;
+  padding: 2px 5px;
+  border-radius: 5px;
+  margin-left: 5px;
+  font-size: 0.8em;
+}
+
+.hide {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .center {
+    flex-direction: column;
+  }
+
+  .navLink {
+    margin: 10px 0;
+  }
+
+  .left, .right {
+    justify-content: center;
+    margin: 10px 0;
+  }
+}
