@@ -1,49 +1,95 @@
+
 .nav {
   display: flex;
-  gap: 20px;  // Adjusted for more consistent spacing
+  justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
-  opacity: 1;
-  transition: opacity 100ms linear;
-  visibility: visible;
-  padding: 0 10px;  // Added padding for better edge alignment
-
-  > * {
-    text-decoration: none;
-    color: white;  // Ensures all elements inside nav are white
-  }
-
-  /* Specific icon adjustments */
-  .icon {
-    width: 24px;  // Standard size for icons
-    height: 24px;  // Maintain aspect ratio
-    vertical-align: middle;
-  }
-
-  a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 8px;
-    border-radius: 5px;  // Optional for rounded touch
-
-    &:hover {
-      background-color: rgba(255, 255, 255, 0.2);  // Hover effect for better interaction
-    }
-  }
-
-  /* Style for the "Login" and "Create Account" links if they include text */
-  a.login-link,
-  a.create-account-link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 8px 12px;  // Sufficient padding for clickable area
-  }
+  width: 100%;
+  padding: 7px 20px;
+  background-color: #fff;
+  position: fixed;
+  top: 120px;
+  left: 0;
+  z-index: 1000;
 }
 
+.left, .center, .right {
+  display: flex;
+  align-items: center;
+}
+
+.center {
+  flex: 1;
+  justify-content: center;
+}
+
+.categoriesButton, .garageButton {
+  background-color: #ffa500;
+  border: none;
+  padding: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  margin: 0 10px;
+  font-size: 30 px;
+}
+
+.categoriesButton .icon, .garageButton .garageIcon {
+  margin-right: 5px;
+}
+
+/* NavLink Styling */
+.navLink {
+  margin: 0 25px;
+  text-decoration: none;
+  color: black;
+  font-size: 1rem;
+  position: relative;
+}
+
+.navLink:hover {
+  color: #ff6600;
+}
+
+.navLink::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #ff6600;
+  transition: width .3s;
+}
+
+/* Visibility Controls */
 .hide {
-  opacity: 0;
-  transition: opacity 100ms linear;
-  visibility: hidden;
+  display: none;
 }
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+  .nav {
+    top: 50px;
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .center {
+    flex-direction: column;
+  }
+
+
+
+
+
+  .left, .right {
+    justify-content: center;
+    margin: 10px 0;
+  }
+}
+
+/* Main content spacing */
+.mainContent {
+  margin-top: 120px;
+}
+
+

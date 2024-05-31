@@ -5,12 +5,22 @@ import { fetchHeader } from '../../_api/fetchGlobals';
 import { Gutter } from '../Gutter';
 import { HeaderNav } from './Nav';
 import classes from './index.module.scss';
+
+
+import { useAuth } from '../../_providers/Auth'
+import { CartLink } from '../CartLink';
+
 export async function Header() {
+
+
+
+
+  
   let header: HeaderType | null = null;
 
   try {
     header = await fetchHeader();
-    console.log(header); // This logs the header data to the console after fetching
+    console.log(header);  
   } catch (error) {
     console.error(error);
   }
@@ -23,7 +33,7 @@ export async function Header() {
             <img
               className={classes.logo}
               alt="Yards & Parts Logo"
-              src="/Logohehe.jpg"
+              src="/Yards_logo.jpg"
             />
           </Link>
           <div className={classes.searchBar}>
@@ -36,8 +46,28 @@ export async function Header() {
               type="text"
               placeholder="Enter a keyword or product SKU"
             />
+
+
+
+
+
+
+
+
+         
+
+            
          
           </div>
+
+          <div className={classes.center}>
+   
+        </div>
+
+
+
+
+          
           <HeaderNav header={header} />
         </Gutter>
       </header>
